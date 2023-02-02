@@ -1,0 +1,64 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<SistemaWebMisRecetas.Models.Receta>
+@{
+    ViewData["Title"] = "Index Receta";
+}
+
+<h1>RECETAS</h1>
+<div id="Nueva">@Html.ActionLink("Nueva","Create","Receta")</div>
+
+@using (Html.BeginForm("Filtro", "Receta", FormMethod.Get))
+{
+    <div></div>
+    <div>
+        <label>Nombre Autor:</label>
+        <input type="text" name="NombreAutor" />
+    </div>
+    <div>
+        <label>Apellido Autor:</label>
+        <input type="text" name="ApellidoAutor" />
+    </div>
+    <input type="submit" action="Filtro" value="Buscar">
+}
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(model=>model.Nombre)</th>
+        <th>@Html.DisplayNameFor(model=>model.Categoria)</th>
+        <th>@Html.DisplayNameFor(model=>model.Ingredientes)</th>
+        <th>@Html.DisplayNameFor(model=>model.Instrucciones)</th>
+        <th>@Html.DisplayNameFor(model=>model.NombreAutor)</th>
+        <th>@Html.DisplayNameFor(model=>model.ApellidoAutor)</th>
+        <th>@Html.DisplayNameFor(model=>model.EdadAutor)</th>
+        <th>@Html.DisplayNameFor(model=>model.EmailAutor)</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink(item.Nombre,"Details",new{id=item.Id})</td>
+            <td>@Html.DisplayFor(model=>item.Categoria)</td>
+            <td>@Html.DisplayFor(model=>item.Ingredientes)</td>
+            <td>@Html.DisplayFor(model=>item.Instrucciones)</td>
+            <td>@Html.DisplayFor(model=>item.NombreAutor)</td>
+            <td>@Html.DisplayFor(model=>item.ApellidoAutor)</td>
+            <td>@Html.DisplayFor(model=>item.EdadAutor)</td>
+            <td>@Html.DisplayFor(model=>item.EmailAutor)</td>
+        </tr>
+    }
+</table>
+
+@section sideBar{
+   
+    @foreach (var item in Model)
+    {
+        <p>
+            @Html.DisplayNameFor(model=>model.Nombre):
+            @Html.DisplayFor(model=>item.Nombre)
+            @Html.ActionLink("Editar","Edit","Receta",new{id=item.Id})
+            @Html.ActionLink("Eliminar","Delete","Receta",new{id=item.Id})
+        </p>
+    }
+}
+

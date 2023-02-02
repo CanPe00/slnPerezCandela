@@ -1,0 +1,43 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Delete Receta";
+}
+@model SistemaWebMisRecetas.Models.Receta
+
+<h1>Receta: @Model.Nombre</h1>
+@using (Html.BeginForm("Delete", "Receta", FormMethod.Post))
+{
+    <div>
+        <p>
+            @Html.DisplayNameFor(model=>model.Categoria):
+            @Html.DisplayFor(model=>model.Categoria)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model=>model.Ingredientes):
+            @Html.DisplayFor(model=>model.Ingredientes)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model=>model.Instrucciones):
+            @Html.DisplayFor(model=>model.Instrucciones)
+        </p>
+        <h4>Autor:</h4>
+        <p>
+            Autor: @Html.DisplayNameFor(model=>model.NombreAutor):
+            @Html.DisplayFor(model=>model.NombreAutor)
+            @Html.DisplayNameFor(model=>model.ApellidoAutor):
+            @Html.DisplayFor(model=>model.ApellidoAutor)
+        </p>
+        <p>
+            @Html.DisplayNameFor(model=>model.EdadAutor):
+            @Html.DisplayFor(model=>model.EdadAutor)
+            @Html.DisplayNameFor(model=>model.EmailAutor):
+            @Html.DisplayFor(model=>model.EmailAutor)
+        </p>
+    </div>
+
+    <h4>¿Desea eliminar esta receta?</h4>
+
+    <input type="submit" action="Delete" value="Aceptar" />
+}

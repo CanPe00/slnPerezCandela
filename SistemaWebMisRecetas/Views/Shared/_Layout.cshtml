@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SistemaWebMisRecetas</title>
+    <link href="~/css/site-recetas.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="principal">
+        <h1>MIS RECETAS</h1>
+    </div>
+    <div id="menu">
+        <div>@Html.ActionLink("Inicio","Index","Home")</div>
+        <div>@Html.ActionLink("Recetas","Index","Receta")</div>
+    </div>
+
+    <div id="container">
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+    <div id="sideBar">
+        @if (IsSectionDefined("sideBar"))
+        {
+            @RenderSection("sideBar")
+        }
+        else
+        {
+        }
+    </div>
+
+    <footer id="footer">
+        &copy; 2023 - misrecetas@web.com - Candela Perez
+    </footer>
+</body>
+</html>

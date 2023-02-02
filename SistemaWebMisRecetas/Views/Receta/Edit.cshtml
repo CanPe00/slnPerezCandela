@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Edit Receta";
+}
+@model SistemaWebMisRecetas.Models.Receta
+<h1>Editar receta</h1>
+
+@using(Html.BeginForm("Edit","Receta",FormMethod.Post)){
+    <p>
+        @Html.LabelFor(model=>model.Nombre):
+        @Html.TextBoxFor(model=>model.Nombre)
+        @Html.ValidationMessageFor(model=>model.Nombre)
+    </p>
+    <p>
+        @Html.LabelFor(model=>model.Categoria):
+        @Html.TextBoxFor(model=>model.Categoria)
+        @Html.ValidationMessageFor(model=>model.Categoria)
+    </p>
+    <p>
+        @Html.LabelFor(model=>model.Ingredientes):
+        @Html.TextAreaFor(model=>model.Ingredientes)
+        @Html.ValidationMessageFor(model=>model.Ingredientes)
+    </p>
+    <p>
+        @Html.LabelFor(model=>model.Instrucciones):
+        @Html.TextAreaFor(model=>model.Instrucciones)
+        @Html.ValidationMessageFor(model=>model.Instrucciones)
+    </p>
+    <h4>Autor:</h4>
+    <p>
+        @Html.LabelFor(model=>model.NombreAutor):
+        @Html.TextBoxFor(model=>model.NombreAutor)
+        @Html.ValidationMessageFor(model=>model.NombreAutor)
+    </p>
+    <p>
+        @Html.LabelFor(model=>model.ApellidoAutor):
+        @Html.TextBoxFor(model=>model.ApellidoAutor)
+        @Html.ValidationMessageFor(model=>model.ApellidoAutor)
+    </p>
+    <p>
+        @Html.LabelFor(model=>model.EdadAutor):
+        @Html.TextBoxFor(model=>model.EdadAutor)
+        @Html.ValidationMessageFor(model=>model.EdadAutor)
+    </p>
+    <p>
+        @Html.LabelFor(model=>model.EmailAutor):
+        @Html.TextBoxFor(model=>model.EmailAutor)
+        @Html.ValidationMessageFor(model=>model.EmailAutor)
+    </p>
+    <input type="submit" action="Edit" value="Guardar"/>
+
+}

@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+@model SistemaWebMisRecetas.Models.Receta
+
+<h1>@Model.Nombre</h1>
+<p>
+    @Html.DisplayNameFor(model=>model.Categoria):
+    @Html.DisplayFor(model=>model.Categoria)
+</p>
+<p>
+    @Html.DisplayNameFor(model=>model.Ingredientes):
+    @Html.DisplayFor(model=>model.Ingredientes)
+</p>
+<p>
+    @Html.DisplayNameFor(model=>model.Instrucciones):
+    @Html.DisplayFor(model=>model.Instrucciones)
+</p>
+<p>
+    Autor: @Html.DisplayNameFor(model=>model.NombreAutor):
+    @Html.DisplayFor(model=>model.NombreAutor)
+    @Html.DisplayNameFor(model=>model.ApellidoAutor):
+    @Html.DisplayFor(model=>model.ApellidoAutor)
+</p>
+<p>
+    @Html.DisplayNameFor(model=>model.EdadAutor):
+    @Html.DisplayFor(model=>model.EdadAutor)
+    @Html.DisplayNameFor(model=>model.EmailAutor):
+    @Html.DisplayFor(model=>model.EmailAutor)
+</p>
+
+
